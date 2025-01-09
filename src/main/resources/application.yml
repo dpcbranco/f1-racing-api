@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: f1-racing-api
+  profiles:
+    active: local
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
