@@ -5,7 +5,7 @@ import br.com.cafum.f1_racing_api.models.Driver
 import org.springframework.stereotype.Service
 import java.util.UUID;
 
-@Service
+@Service("local-driver-service")
 class LocalDriverService: DriverService {
 
     private val drivers: MutableMap<String, Driver> = mutableMapOf(

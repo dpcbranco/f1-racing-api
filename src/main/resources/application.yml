@@ -3,6 +3,19 @@ spring:
     name: f1-racing-api
   profiles:
     active: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://coderift.com.br:3306/NBG1DC3DB_CAFUM
+  jpa:
+    properties:
+      hibernate:
+        connection:
+          url: jdbc:mysql://coderift.com.br:3306/NBG1DC3DB_CAFUM
+          user: user
+          password: J@5m%CoA5V
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQLDialect
 management:
   endpoints:
     web:

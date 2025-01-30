@@ -3,6 +3,7 @@ package br.com.cafum.f1_racing_api.controllers
 import br.com.cafum.f1_racing_api.controllers.dto.DTOMapper
 import br.com.cafum.f1_racing_api.controllers.dto.DriverDTO
 import br.com.cafum.f1_racing_api.services.driver.DriverService
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.http.HttpStatusCode
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -10,7 +11,7 @@ import java.util.*
 
 @RestController
 @RequestMapping("/drivers")
-class DriversController(val driverService: DriverService) {
+class DriversController(@Qualifier("mysql-driver-service") val driverService: DriverService) {
 
     @GetMapping
     fun getDrivers(@RequestParam active: Boolean): List<DriverDTO> {
